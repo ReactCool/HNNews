@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Homepage from '@/components/Homepage'
 import Single from '@/components/Single'
 import New from '@/components/New'
+import Best from '@/components/Best'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/new',
       name: 'New',
       component: New
+    },
+    {
+      path: '/best',
+      name: 'Best',
+      component: Best
     }
   ]
 })

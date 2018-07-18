@@ -28,5 +28,19 @@ export default {
         })
       })
       .catch(err => console.log(err))
+  },
+  fetch_best_stories: ({ commit }) => {
+    axios.get('https://hacker-news.firebaseio.com/v0/beststories.json')
+      .then(resp => {
+        let results = resp.data.slice(0, 25)
+        results.forEach(element => {
+          axios.get('https://hacker-news.firebaseio.com/v0/item/' + element + '.json')
+            .then((result) => {
+              commit('APPEND_BEST_STORY', result)
+            })
+            .catch(err => console.log(err))
+        })
+      })
+      .catch(err => console.log(err))
   }
 }

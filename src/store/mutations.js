@@ -4,5 +4,8 @@ export default {
   },
   APPEND_NEW_STORY: (state, article) => {
     state.newStories.push(article)
+  },
+  APPEND_BEST_STORY: (state, article) => {
+    state.bestStories.push(article)
   }
 }
